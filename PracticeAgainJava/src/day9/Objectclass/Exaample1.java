@@ -1,0 +1,35 @@
+package day9.Objectclass;
+class Demo{
+	void display() {
+		System.out.println("I am display()..");
+	}
+}
+public class Exaample1 extends Demo{
+	static int last_roll = 100;
+	int roll_no;
+	// Constructor
+	Exaample1()
+    {
+        roll_no = last_roll;
+        last_roll++;
+    }
+	// Driver code
+	public static void main(String args[]) {
+		Exaample1 s = new Exaample1();
+		// Below two statements are equivalent
+		System.out.println(s);//java complier writes-->s.toString() -->string representation of an object--> FQCN@hexadecimaladdress
+		System.out.println(s.toString());//string representation of an object
+		Demo d1=new Demo();
+		System.out.println(d1);//d1.toString();
+		Demo d3=new Demo();
+		System.out.println(d3.toString());		
+		Demo d2=new Exaample1();
+		System.out.println(d2);
+	}
+}
+
+/**
+ * string representation---> fullyqualifiedclassname@hexadecimaladdress	
+ * 							 packagename.classname@hexadecimaladdress
+ * 
+ */
